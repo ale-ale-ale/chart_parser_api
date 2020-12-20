@@ -10,4 +10,4 @@ For parse actual data you need to manage command through the CMD by next command
 
 To get chart list use:
 - api/chart/ (Get list of songs)
-- api/chart/<int:position>/ (Get song detail info by position)
+- api/chart/<str:author>/ (Get song detail info by author name)
