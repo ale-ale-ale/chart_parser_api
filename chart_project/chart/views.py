@@ -1,8 +1,8 @@
 from django.shortcuts import get_object_or_404
 
 from rest_framework.generics import ListAPIView, RetrieveAPIView
-from .models import SongInChart
 
+from .models import SongInChart
 from .serializers import SongSerializer
 
 
@@ -16,11 +16,11 @@ class ChartView(ListAPIView):
 
 class SongView(RetrieveAPIView):
     """
-    Returns song details for requested position.
+    Returns song details for requested author.
     """
     serializer_class = SongSerializer
 
     def get_object(self):
-        return get_object_or_404(SongInChart, position=self.kwargs['position'])
+        return get_object_or_404(SongInChart, author=self.kwargs['author'])
 
 
